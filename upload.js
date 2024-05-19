@@ -11,7 +11,7 @@ async function getIrys() {
   const irys = new Irys({
     network: "devnet",
     token,
-    key: process.env.PRIVATE_KEY, // Private key
+    key: process.env.SOLANA_PRIVATE_KEY, // Private key
     config: { providerUrl }, // Optional provider URL, only required when using Devnet
   });
   return irys;
