@@ -1,0 +1,16 @@
+{
+  "name": "upload-to-irys",
+  "version": "1.0.0",
+  "main": "upload.js",
+  "license": "MIT",
+  "scripts": {
+    "upload": "node upload.js"
+  },
+  "dependencies": {
+    "@irys/sdk": "^0.2.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5"
+  }
+}
