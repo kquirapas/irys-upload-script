@@ -20,19 +20,18 @@ async function getIrys() {
 async function main() {
   // get path from arg
   const [, , pathToFile] = process.argv;
-  // upload sample token image
 
-  // upload sample token metadata
   const irys = await getIrys();
 
   // Add a custom tag that tells the gateway how to serve this file to a browser
-  const tags = [{ name: "Content-Type", value: "image/png" }];
+  // const tags = [{ name: "Content-Type", value: "image/png" }];
 
   const { size } = await fs.promises.stat(pathToFile);
   const price = await irys.getPrice(size);
   await irys.fund(price);
 
-  const { id } = await irys.uploadFile(pathToFile, tags);
+  // const { id } = await irys.uploadFile(pathToFile, tags);
+  const { id } = await irys.uploadFile(pathToFile);
   const gateway = `https://gateway.irys.xyz/${id}`;
   console.log(`${pathToFile} --> Uploaded to ${gateway}`);
   return id;
